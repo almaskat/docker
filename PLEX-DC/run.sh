@@ -1,7 +1,7 @@
 sudo docker rm plex
 sudo docker run \
 -d \
---name plex \
+--name plex-dc \
 -p 32400:32400/tcp \
 -p 3005:3005/tcp \
 -p 8324:8324/tcp \
@@ -14,7 +14,7 @@ sudo docker run \
 -e TZ="America/New_York" \
 -e PLEX_CLAIM="$1" \
 -e ADVERTISE_IP="http://server.maskatiya.xyz:32400/" \
--h IMASKAT \
+-h "PLEX-IEM" \
 -v $PWD/plex_database:/config \
 -v $PWD/plex_transcode:/transcode \
 -v $PWD/plex_data:/data \
