@@ -1,4 +1,4 @@
-sudo docker rm plex
+sudo docker rm plex-dc
 sudo docker run \
 -d \
 --name plex-dc \
