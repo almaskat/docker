@@ -4,4 +4,5 @@ sudo docker run \
     -it \
     -d \
     --name plex-dc \
+    --restart always \
     $image_id

@@ -8,5 +8,5 @@ sudo docker run \
     -v $PWD/smb.conf:/etc/samba/smb.conf:ro \
     -d \
     --name share-dc \
-    --restart always
+    --restart always \
     $image_id
