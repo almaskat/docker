@@ -1,8 +1,12 @@
 sudo docker rm plex-dc
-image_id=`sudo docker images | grep plex-dc | awk '{print $3}'`
 sudo docker run \
-    -it \
     -d \
+    -p 32400:32400 \
+    -v /media/1TB:/mount:rw \
+    -v $PWD/plex_config:/config \
+    -v $PWD/plex_transcode:/transcode \
+    -v $PWD/plex_data:/data \
     --name plex-dc \
+    --network=host \
     --restart always \
-    $image_id
+    plexinc/pms-docker
