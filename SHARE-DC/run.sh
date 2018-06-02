@@ -1,7 +1,6 @@
 sudo docker rm share-dc
 image_id=`sudo docker images | grep share-dc | awk '{print $3}'`
 sudo docker run \
-    -it \
     -d \
     -p 139:139 \
     -p 445:445 \
