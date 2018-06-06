@@ -1,5 +1,4 @@
 sudo docker rm share-dc
-image_id=`sudo docker images | grep share-dc | awk '{print $3}'`
 sudo docker run \
     -d \
     -p 139:139 \
@@ -8,4 +7,4 @@ sudo docker run \
     -v $PWD/smb.conf:/etc/samba/smb.conf:ro \
     --name share-dc \
     --restart always \
-    $image_id
+    share-dc

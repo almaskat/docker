@@ -1,9 +1,12 @@
 sudo docker rm download-dc
-image_id=`sudo docker images | grep download-dc | awk '{print $3}'`
 sudo docker run \
     -d \
-    -p 8080:8080 \
+    -p 9091:9091 \
     -v /media/1TB:/mount:rw \
+    -v $PWD/download_data:/data \
+    -v /etc/localtime:/etc/localtime:ro \
+    -e OPENVPN_PROVIDER=CUSTOM \
+    
     --name download-dc \
     --restart always \
-    $image_id
+    haugene/transmission-openvpn
