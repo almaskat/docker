@@ -1,5 +1,6 @@
 sudo docker rm share-dc
 sudo docker run \
+    -it \
     -d \
     -p 139:139 \
     -p 445:445 \
